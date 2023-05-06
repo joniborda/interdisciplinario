@@ -9,12 +9,11 @@ const CloseIcon = () => (
 );
 
 type ButtonProps = {
-  children?: JSX.Element | JSX.Element[] | string | string[] | (string | JSX.Element)[];
   title?: string;
   body?: string;
   className?: string;
 };
-export const Button = ({ children, title, body, className }: ButtonProps) => {
+export const Button = ({ title, body, className }: ButtonProps) => {
   const [reveal, setReveal] = React.useState(false);
   const handleClick = () => {
     setReveal(!reveal);
@@ -23,22 +22,21 @@ export const Button = ({ children, title, body, className }: ButtonProps) => {
   return (
     <>
       <button
-        className={clsx("rounded-xl bg-slate-950 px-8 py-6 ", className)}
+        className={clsx("rounded-xl bg-[#42CBA5] px-8 py-6 ", className)}
         onClick={handleClick}
       >
-        {children}
-        <h2 className="text-xl">{title}</h2>
+        <h2 className="text-2xl text-black">{title}</h2>
       </button>
       <div
         className={clsx(
           reveal ? "h-96 p-10" : "h-0 p-0 border-0",
           "overflow-hidden transition-all duration-100",
-          "fixed top-1/4 left-0 right-0 z-10 border-[#333333] border bg-black",
+          "fixed top-1/4 left-0 right-0 z-10 border-[#222e35] border bg-[#2a3942]",
           "rounded-2xl "
         )}
       >
         <button
-          className="absolute top-0 right-0 p-4"
+          className="absolute top-5 right-4 p-4"
           onClick={() => {
             setReveal(false);
           }}
@@ -46,6 +44,7 @@ export const Button = ({ children, title, body, className }: ButtonProps) => {
           <CloseIcon />
         </button>
 
+        <h2 className="text-xl text-[#d1d7db] font-semibold">{title}</h2>
         <div
           className={clsx(
             "flex h-full items-center justify-center",
@@ -55,7 +54,7 @@ export const Button = ({ children, title, body, className }: ButtonProps) => {
         >
           <p
             className={clsx(
-              "text-2xl",
+              "text-3xl text-[#d1d7db]",
               reveal ? "opacity-100" : "opacity-0",
               "transition-all duration-200 font-semibold"
             )}

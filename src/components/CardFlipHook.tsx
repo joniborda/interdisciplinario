@@ -1,9 +1,13 @@
 import React from "react";
 
+import { data } from "../data";
 export const useCardFlip = () => {
   const [changing, setChanging] = React.useState(false);
+  const [currentProblem, setCurrentProblem] = React.useState(data[0]);
   const handleClick = () => {
     setChanging(true);
+    const randomIndex = Math.floor(Math.random() * data.length);
+    setCurrentProblem(data[randomIndex]);
   };
 
   React.useEffect(() => {
@@ -14,5 +18,6 @@ export const useCardFlip = () => {
     }
   }, [changing]);
 
-  return { changing, handleClick };
+  return { changing, handleClick,
+    currentProblem };
 };
