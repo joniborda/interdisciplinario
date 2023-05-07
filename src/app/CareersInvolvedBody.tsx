@@ -2,6 +2,7 @@
 import { Button } from "@/app/Button";
 import { CardFlip } from "@/components/CardFlip";
 import { useCardFlip } from "@/components/CardFlipHook";
+import { Heading1 } from "@/components/Heading1";
 import clsx from "clsx";
 
 export const CareersInvolvedBody = () => {
@@ -11,7 +12,7 @@ export const CareersInvolvedBody = () => {
       <div className="flex flex-col h-full bg-[#222e35] rounded-3xl p-10">
         <div className="flex flex-col justify-start content-center h-full">
           <div className="flex justify-between items-center h-full max-h-[50%]">
-            <h1 className="text-4xl font-light text-[#e9edef]">{currentProblem.problem}</h1>
+            <Heading1>{currentProblem.problem}</Heading1>
           </div>
           <div className="mt-10 text-2xl font-light text-[#e9edef]">
             Disciplinas que intervienen:

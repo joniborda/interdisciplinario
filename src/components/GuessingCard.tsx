@@ -1,5 +1,6 @@
 "use client";
 import { useGuessingCard } from "./GuessingCardHook";
+import { Heading1 } from "./Heading1";
 
 export const GuessingCard = ({
   data,
@@ -17,7 +18,7 @@ export const GuessingCard = ({
       ref={refCard}
       draggable
     >
-      {data.title}
+      <Heading1>{data.riddle}</Heading1>
     </div>
   );
 };

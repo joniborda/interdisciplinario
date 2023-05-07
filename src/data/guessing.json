@@ -1,0 +1,81 @@
+[
+  {
+    "title": "Software Engineer",
+    "riddle": "Disciplina que aplica el conocimiento científico y tecnológico para resolver problemas prácticos y crear soluciones innovadoras y eficientes."
+  },
+  {
+    "title": "Psicología",
+    "riddle": "Disciplina científica que se enfoca en el estudio del comportamiento humano y los procesos mentales que lo subyacen."
+  },
+  { "title": "biologia", "riddle": "Ciencia que estudia los seres vivos y sus procesos vitales." },
+  {
+    "title": "fisica",
+    "riddle": "Ciencia que se enfoca en el estudio de la materia, la energía y sus interacciones."
+  },
+  {
+    "title": "quimica",
+    "riddle": "Ciencia que se encarga del estudio de la estructura, propiedades y reacciones de la materia."
+  },
+  {
+    "title": "matematicas",
+    "riddle": "Disciplina que se enfoca en el estudio de los números, las estructuras y las relaciones entre ellos."
+  },
+  {
+    "title": "historia",
+    "riddle": "Estudio de los eventos pasados y sus consecuencias en la sociedad actual."
+  },
+  {
+    "title": "filosofia",
+    "riddle": "Estudio de la naturaleza de la realidad, la existencia, la mente y la moralidad."
+  },
+  {
+    "title": "economia",
+    "riddle": "Ciencia que se enfoca en la producción, distribución y consumo de bienes y servicios."
+  },
+  {
+    "title": "sociologia",
+    "riddle": "Estudio de la sociedad y sus instituciones, estructuras y relaciones."
+  },
+  { "title": "antropologia", "riddle": "Estudio de la cultura y la evolución humana." },
+  { "title": "linguistica", "riddle": "Estudio científico de los lenguajes y la comunicación." },
+  {
+    "title": "derecho",
+    "riddle": "Conjunto de normas y principios que regulan la conducta humana y las relaciones sociales."
+  },
+  {
+    "title": "psicologia",
+    "riddle": "Ciencia que estudia el comportamiento humano y los procesos mentales que lo subyacen."
+  },
+  {
+    "title": "geologia",
+    "riddle": "Ciencia que se encarga del estudio de la estructura, composición y evolución de la Tierra."
+  },
+  {
+    "title": "ingenieria",
+    "riddle": "Disciplina que se enfoca en el diseño, construcción y optimización de sistemas complejos."
+  },
+  {
+    "title": "arqueologia",
+    "riddle": "Estudio de las sociedades y culturas antiguas a través de los restos materiales que dejaron."
+  },
+  {
+    "title": "medicina",
+    "riddle": "Ciencia que se enfoca en el diagnóstico, tratamiento y prevención de enfermedades."
+  },
+  {
+    "title": "artes visuales",
+    "riddle": "Disciplina que incluye la pintura, escultura, dibujo, fotografía y otras formas de arte visual."
+  },
+  {
+    "title": "musica",
+    "riddle": "Arte que se enfoca en la creación y producción de sonidos y melodías."
+  },
+  {
+    "title": "teatro",
+    "riddle": "Arte escénico que se enfoca en la representación de historias a través de la actuación."
+  },
+  {
+    "title": "literatura",
+    "riddle": "Arte que se enfoca en la creación y producción de textos escritos, como novelas, poesía y cuentos."
+  }
+]
