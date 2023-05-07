@@ -2,6 +2,9 @@
 import React from "react";
 import clsx from "clsx";
 
+import { LikeIcon } from "./Likeicon";
+import { DislikeIcon } from "./Dislikeicon";
+
 const CloseIcon = () => (
   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -44,23 +47,27 @@ export const Button = ({ title, body, className }: ButtonProps) => {
           <CloseIcon />
         </button>
 
-        <h2 className="text-xl text-[#d1d7db] font-semibold">{title}</h2>
+        <h2 className="text-xl text-[#d1d7db] font-light">{title}</h2>
         <div
           className={clsx(
-            "flex h-full items-center justify-center",
+            "flex flex-col h-full items-center justify-between",
             reveal ? "w-full" : "w-0",
-            "transition-all duration-100 font-semibold"
+            "transition-all duration-100"
           )}
         >
           <p
             className={clsx(
-              "text-3xl text-[#d1d7db]",
+              "text-3xl text-[#d1d7db] mt-10",
               reveal ? "opacity-100" : "opacity-0",
-              "transition-all duration-200 font-semibold"
+              "transition-all duration-200 font-light"
             )}
           >
             {body}
           </p>
+          <div className="flex justify-self-end rounded-3xl bg-slate-500 px-6 py-3 gap-6 mb-10">
+            <LikeIcon width={"24px"} color="#ffffff"/>
+            <DislikeIcon width={"24px"} color="#ffffff"/>
+          </div>
         </div>
       </div>
     </>
