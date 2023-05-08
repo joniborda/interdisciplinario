@@ -65,3 +65,7 @@ body {
     transform: rotateY(180deg);
   }
 }
+
+[draggable] * {
+  cursor: default !important;
+}

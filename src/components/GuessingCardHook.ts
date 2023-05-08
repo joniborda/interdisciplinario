@@ -1,6 +1,6 @@
 import { use, useEffect, useRef } from "react";
 
-export const useGuessingCard = ({ handleLikeCard, handleDislikeCard }: any) => {
+export const useGuessingCard = ({ handleLikeCard, handleDislikeCard, frontSide }: any) => {
   const refCard = useRef<HTMLDivElement>(null);
   const maxDragToChangePage = 150;
   let dragXCurrent = 0;
@@ -9,21 +9,29 @@ export const useGuessingCard = ({ handleLikeCard, handleDislikeCard }: any) => {
   const dragStart = (e: DragEvent) => {
     const card = refCard.current;
     if (card) {
-      card.style.transform = `translate3d(0px, 0px, 0)`;
+      card.style.transform = `translateX(0px)`;
       initialDragX = e.clientX;
 
       const img = new Image();
       e?.dataTransfer?.setDragImage(img, 0, 0);
     }
   };
-
+  
   const dragElement = (e: DragEvent) => {
+    if (frontSide) return;
+    
     const card = refCard.current;
+    // stay default cursor
+    if (e.dataTransfer) e.dataTransfer.dropEffect = "none";
+    
+    
+    
     const x = e.clientX;
     if (card && x !== 0) {
+
       const dragX = x - initialDragX;
       dragXCurrent = dragX;
-      card.style.transform = `rotate(${dragX / 50}deg) translate3d(${dragX}px, 0px, 0)`;
+      card.style.transform = `rotate(${dragX / 50}deg) translateX(${dragX}px)`;
 
       card.style.opacity = "1";
       if (maxDragToChangePage < dragXCurrent || dragXCurrent < -maxDragToChangePage) {
@@ -35,7 +43,7 @@ export const useGuessingCard = ({ handleLikeCard, handleDislikeCard }: any) => {
   const resetPosition = () => {
     const card = refCard.current;
     if (card) {
-      card.style.transform = `translate3d(0px, 0px, 0)`;
+      card.style.transform = `translateX(0px)`;
     }
 
     if (maxDragToChangePage < dragXCurrent) {
@@ -60,7 +68,7 @@ export const useGuessingCard = ({ handleLikeCard, handleDislikeCard }: any) => {
         card.removeEventListener("dragend", resetPosition);
       }
     };
-  }, [refCard, initialDragX]);
+  }, [refCard, initialDragX, frontSide]);
 
   return {
     refCard,
