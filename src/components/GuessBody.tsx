@@ -25,13 +25,13 @@ export const GuessBody = () => {
 
   return (
     <>
-      {data.map((item) => (
+      {data.map((item, index) => (
         <GuessingCard
           key={item.title}
           data={item}
           handleLikeCard={handleLikeCard}
           handleDislikeCard={handleDislikeCard}
-          
+          isAhead={index >= data.length - 2}
         />
       ))}
     </>
