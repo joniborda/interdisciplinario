@@ -14,7 +14,7 @@ export const CareersInvolvedBody = () => {
           <div className="flex justify-between items-center h-full max-h-[50%]">
             <Heading1>{currentProblem.problem}</Heading1>
           </div>
-          <div className="mt-10 text-2xl font-light text-[#e9edef]">
+          <div className="mt-10 text-2xl font-light text-[#e0e3e4]">
             Disciplinas que intervienen:
           </div>
           <div

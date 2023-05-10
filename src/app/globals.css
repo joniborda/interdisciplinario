@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "fortnite";
+  src: url("/fonts/fortnite.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "indie-flower";
+  src: url("/fonts/IndieFlower-Regular.ttf") format("opentype");
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -11,7 +21,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 17,27,33;
+    --background-start-rgb: 17, 27, 33;
     --background-end-rgb: 0, 0, 0;
   }
 }
@@ -64,8 +74,4 @@ body {
   100% {
     transform: rotateY(180deg);
   }
-}
-
-[draggable] * {
-  cursor: default !important;
 }
