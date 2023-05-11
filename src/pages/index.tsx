@@ -1,4 +1,4 @@
-import { CareersInvolvedBody } from "../app/CareersInvolvedBody";
+import { CareersInvolvedBody } from "../components/CareersInvolvedBody";
 
 export default function Home() {
   return (

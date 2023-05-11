@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "@/app/Button";
+import { Button } from "@/components/Button";
 import { CardFlip } from "@/components/CardFlip";
 import { useCardFlip } from "@/components/CardFlipHook";
 import { Heading1 } from "@/components/Heading1";

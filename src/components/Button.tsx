@@ -2,14 +2,9 @@
 import React from "react";
 import clsx from "clsx";
 
-import { LikeIcon } from "./LikeIcon";
-import { DislikeIcon } from "./DislikeIcon";
-
-const CloseIcon = () => (
-  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-  </svg>
-);
+import { LikeIcon } from "./Icons/LikeIcon";
+import { DislikeIcon } from "./Icons/DislikeIcon";
+import { CloseIcon } from "./Icons/CloseIcon";
 
 type ButtonProps = {
   title?: string;
@@ -65,8 +60,8 @@ export const Button = ({ title, body, className }: ButtonProps) => {
             {body}
           </p>
           <div className="flex justify-self-end rounded-3xl bg-slate-500 px-6 py-3 gap-6 mb-10">
-            <LikeIcon width={"24px"} color="#ffffff"/>
-            <DislikeIcon width={"24px"} color="#ffffff"/>
+            <LikeIcon width={"24px"} color="#ffffff" />
+            <DislikeIcon width={"24px"} color="#ffffff" />
           </div>
         </div>
       </div>

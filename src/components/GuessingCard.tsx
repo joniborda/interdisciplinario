@@ -5,8 +5,8 @@ import { useGuessingCard } from "./GuessingCardHook";
 import { Heading1 } from "./Heading1";
 import { Heading2 } from "./Heading2";
 import { useState } from "react";
-import { LeftIcon } from "../app/LeftIcon";
-import { RightIcon } from "../app/RightIcon";
+import { LeftIcon } from "./Icons/LeftIcon";
+import { RightIcon } from "./Icons/RightIcon";
 
 export const GuessingCard = ({
   data,
