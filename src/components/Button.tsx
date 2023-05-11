@@ -20,10 +20,10 @@ export const Button = ({ title, body, className }: ButtonProps) => {
   return (
     <>
       <button
-        className={clsx("rounded-xl bg-[#42CBA5] px-8 py-6 ", className)}
+        className={clsx("rounded-xl bg-[#42CBA5] px-8 py-6 text-2xl text-black", className)}
         onClick={handleClick}
       >
-        <h2 className="text-2xl text-black">{title}</h2>
+        {title}
       </button>
       <div
         className={clsx(

@@ -12,23 +12,31 @@ export const CareersInvolvedBody = () => {
       <div className="flex flex-col h-full bg-[#222e35] rounded-3xl p-10">
         <div className="flex flex-col justify-start content-center h-full">
           <div className="flex justify-between items-center h-full max-h-[50%]">
-            <Heading1>{currentProblem.problem}</Heading1>
+            <Heading1 className="md:text-3xl sm:text-2xl text-xl ">
+              {currentProblem.problem}
+            </Heading1>
           </div>
-          <div className="mt-10 text-2xl font-light text-[#e0e3e4]">
-            Disciplinas que intervienen:
-          </div>
+          {/* <div className="mt-10 text-2xl font-light text-[#e0e3e4]">
+            Disciplinas que intervienen: 
+          </div> */}
           <div
             className={clsx(
-              "grid grid-flow-dense items-start justify-center gap-y-4 gap-x-6 mt-4",
+              "grid grid-flow-dense items-start justify-center mt-4",
+              currentProblem.options.length > 6 ? "gap-y-2 gap-x-4" : "gap-y-4 gap-x-2 sm:gap-x-6",
               currentProblem.options.length === 1
                 ? "grid-cols-1"
                 : currentProblem.options.length === 2
                 ? "grid-cols-2"
-                : "grid-cols-3"
+                : "grid-cols-2 sm:grid-cols-3"
             )}
           >
             {currentProblem.options.map((option, index) => (
-              <Button key={index} title={option.title} body={option.body} />
+              <Button
+                key={index}
+                title={option.title}
+                body={option.body}
+                className="py-2 sm:px-2 px-0 text-base md:text-lg lg:text-xl xl:text-2xl" 
+              />
             ))}
           </div>
         </div>
