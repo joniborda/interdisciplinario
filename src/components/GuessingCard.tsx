@@ -69,7 +69,7 @@ export const GuessingCard = ({
           <Heading1
             className={clsx(
               "h-2/3 bg-[#0d1519a3] rounded-2xl flex items-center p-4",
-              "text-2xl sm:text-4xl"
+              "text-xl sm:text-2xl md:text-4xl"
             )}
           >
             {data.riddle}
@@ -77,7 +77,8 @@ export const GuessingCard = ({
           <Heading2
             className={clsx(
               "uppercase mt-5 transition-all duration-1000 ease-linear font-[fortnite]",
-              frontSide ? "opacity-0" : "opacity-100"
+              frontSide ? "opacity-0" : "opacity-100",
+              "text-4xl sm:text-5xl md:text-6xl"
             )}
           >
             {data.title}
