@@ -10,7 +10,7 @@ export default function Home() {
       <TopBar>
         <Heading1
           style={{ textShadow: "1px 4px 4px #000000" }}
-          className="font-[fortnite] text-4xl"
+          className="font-[fortnite] text-4xl p-4"
         >
           ¿Qué disciplinas intervienen?
         </Heading1>

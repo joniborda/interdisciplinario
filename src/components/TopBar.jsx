@@ -1,4 +1,5 @@
 import clsx from 'clsx'
+import Link from 'next/link'
 import { useState } from 'react'
 
 export const TopBar = ({ children }) => {
@@ -35,18 +36,14 @@ export const TopBar = ({ children }) => {
           ></div>
         </button>
         <div className="flex flex-col gap-1 justify-center items-center">
-          <a
-            className="py-2 hover:bg-slate-800 block w-full font-[fortnite] tracking-widest text-xl"
-            href="/"
-          >
-            ¿Qué disciplinas intervienen?
-          </a>
-          <a
-            className="py-2 hover:bg-slate-800 block w-full font-[fortnite] tracking-widest text-xl"
-            href="/guess"
-          >
-            ¿Cuál es la disciplina?
-          </a>
+          <Link href="/"
+            className="py-2 hover:bg-slate-800 block w-full font-[fortnite] tracking-widest text-xl">
+              ¿Qué disciplinas intervienen?
+          </Link>
+          <Link href="/guess"
+            className="py-2 hover:bg-slate-800 block w-full font-[fortnite] tracking-widest text-xl">
+              ¿Cuál es la disciplina?
+          </Link>
         </div>
       </div>
       <div className="pt-3 px-2">
