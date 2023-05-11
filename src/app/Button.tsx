@@ -2,8 +2,8 @@
 import React from "react";
 import clsx from "clsx";
 
-import { LikeIcon } from "./Likeicon";
-import { DislikeIcon } from "./Dislikeicon";
+import { LikeIcon } from "./LikeIcon";
+import { DislikeIcon } from "./DislikeIcon";
 
 const CloseIcon = () => (
   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
