@@ -46,7 +46,7 @@ export const GuessingCard = ({
         isAhead ? "rotate-0" : Math.random() > 0.5 ? "rotate-2" : "-rotate-2"
       )}
       ref={refCard}
-      draggable
+      // draggable
     >
       <CardFlip className="h-full w-full p-10" changing={changing} handleClick={handleRevealRiddle}>
         <div

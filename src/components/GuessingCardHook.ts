@@ -16,19 +16,27 @@ export const useGuessingCard = ({ handleLikeCard, handleDislikeCard, frontSide }
       e?.dataTransfer?.setDragImage(img, 0, 0);
     }
   };
-  
+
+  const dragStartMobile = (e: TouchEvent) => {
+    //TODO: refactor this
+    const card = refCard.current;
+    if (card) {
+      card.style.transform = `translateX(0px)`;
+      initialDragX = e.touches[0].clientX;
+
+      const img = new Image();
+    }
+  };
+
   const dragElement = (e: DragEvent) => {
     if (frontSide) return;
-    
+
     const card = refCard.current;
     // stay default cursor
     if (e.dataTransfer) e.dataTransfer.dropEffect = "none";
-    
-    
-    
+
     const x = e.clientX;
     if (card && x !== 0) {
-
       const dragX = x - initialDragX;
       dragXCurrent = dragX;
       card.style.transform = `rotate(${dragX / 50}deg) translateX(${dragX}px)`;
@@ -40,6 +48,25 @@ export const useGuessingCard = ({ handleLikeCard, handleDislikeCard, frontSide }
     }
   };
 
+  const dragElementMobile = (e: TouchEvent) => {
+    //TODO: refactor this
+    if (frontSide) return;
+
+    const card = refCard.current;
+    // stay default cursor
+
+    const x = e.touches[0].clientX;
+    if (card && x !== 0) {
+      const dragX = x - initialDragX;
+      dragXCurrent = dragX;
+      card.style.transform = `rotate(${dragX / 50}deg) translateX(${dragX}px)`;
+
+      card.style.opacity = "1";
+      if (maxDragToChangePage < dragXCurrent || dragXCurrent < -maxDragToChangePage) {
+        card.style.opacity = "0.8";
+      }
+    }
+  };
   const resetPosition = () => {
     const card = refCard.current;
     if (card) {
@@ -60,12 +87,18 @@ export const useGuessingCard = ({ handleLikeCard, handleDislikeCard, frontSide }
       card.addEventListener("dragstart", dragStart);
       card.addEventListener("drag", dragElement);
       card.addEventListener("dragend", resetPosition);
+      card.addEventListener("touchstart", dragStartMobile);
+      card.addEventListener("touchmove", dragElementMobile);
+      card.addEventListener("touchend", resetPosition);
     }
     return () => {
       if (card) {
         card.removeEventListener("dragstart", dragStart);
         card.removeEventListener("drag", dragElement);
         card.removeEventListener("dragend", resetPosition);
+        card.removeEventListener("touchstart", dragStartMobile);
+        card.removeEventListener("touchmove", dragElementMobile);
+        card.removeEventListener("touchend", resetPosition);
       }
     };
   }, [refCard, initialDragX, frontSide]);
