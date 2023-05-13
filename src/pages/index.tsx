@@ -18,7 +18,7 @@ export default function Home() {
       <div
         className={clsx(
           "flex h-[calc(100vh-102px)] overflow-hidden flex-col",
-          "items-center justify-between p-6 sm:p-20 pt-1 sm:pt-10"
+          "items-center justify-between p-6 sm:p-10 pt-1 sm:pt-10"
         )}
       >
         <div className="z-10 h-full w-full max-w-5xl items-center flex-col justify-between text-sm lg:flex">

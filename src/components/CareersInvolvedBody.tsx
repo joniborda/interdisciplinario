@@ -29,9 +29,6 @@ export const CareersInvolvedBody = () => {
               {currentProblem.problem}
             </Heading1>
           </div>
-          {/* <div className="mt-10 text-2xl font-light text-[#e0e3e4]">
-            Disciplinas que intervienen: 
-          </div> */}
           <div
             className={clsx(
               "grid grid-flow-dense items-start justify-center mt-4",
