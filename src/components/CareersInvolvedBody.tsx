@@ -7,12 +7,25 @@ import clsx from "clsx";
 
 export const CareersInvolvedBody = () => {
   const { changing, handleClick, currentProblem } = useCardFlip();
+  if (!currentProblem)
+    return (
+      <div className="flex flex-col items-center justify-center w-full h-full">
+        <h1 className="text-2xl sm:text-4xl font-[fortnite] text-white">¡Felicidades!</h1>
+        <h2 className="text-xl sm:text-2xl font-[fortnite] text-white">Has completado el juego</h2>
+      </div>
+    );
   return (
-    <CardFlip className="h-full w-full p-10" changing={changing}>
-      <div className="flex flex-col h-full bg-[#222e35] rounded-3xl p-10">
+    <CardFlip className="h-full w-full p-1 sm:p-10" changing={changing}>
+      <div className="flex flex-col h-full bg-[#222e35] rounded-3xl p-2 sm:p-10">
         <div className="flex flex-col justify-start content-center h-full">
           <div className="flex justify-between items-center h-full max-h-[50%]">
-            <Heading1 className="md:text-3xl sm:text-2xl text-xl ">
+            <Heading1
+              className={clsx(
+                currentProblem.problem.length > 80
+                  ? "md:text-2xl sm:text-xl text-lg "
+                  : "md:text-3xl sm:text-2xl text-xl "
+              )}
+            >
               {currentProblem.problem}
             </Heading1>
           </div>
@@ -26,7 +39,7 @@ export const CareersInvolvedBody = () => {
               currentProblem.options.length === 1
                 ? "grid-cols-1"
                 : currentProblem.options.length === 2
-                ? "grid-cols-2"
+                ? "grid-cols-1 sm:grid-cols-2"
                 : "grid-cols-2 sm:grid-cols-3"
             )}
           >
@@ -35,7 +48,7 @@ export const CareersInvolvedBody = () => {
                 key={index}
                 title={option.title}
                 body={option.body}
-                className="py-2 sm:px-2 px-0 text-base md:text-lg lg:text-xl xl:text-2xl" 
+                className="py-2 sm:px-2 px-0 text-base md:text-lg lg:text-xl xl:text-2xl"
               />
             ))}
           </div>

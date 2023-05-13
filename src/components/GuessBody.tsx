@@ -25,6 +25,14 @@ export const GuessBody = () => {
 
   return (
     <>
+      {data.length === 0 && (
+        <div className="flex flex-col items-center justify-center w-full h-full">
+          <h1 className="text-2xl sm:text-4xl font-[fortnite] text-white">¡Felicidades!</h1>
+          <h2 className="text-xl sm:text-2xl font-[fortnite] text-white">
+            Has completado el juego
+          </h2>
+        </div>
+      )}
       {data.map((item, index) => (
         <GuessingCard
           key={item.title}
@@ -32,6 +40,8 @@ export const GuessBody = () => {
           handleLikeCard={handleLikeCard}
           handleDislikeCard={handleDislikeCard}
           isAhead={index >= data.length - 2}
+          isLast={index === data.length - 1}
+          isVisible={index > data.length - 5}
         />
       ))}
     </>

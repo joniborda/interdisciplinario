@@ -6,6 +6,20 @@ const getX = (e: DragEvent | TouchEvent) => {
   }
   return e.touches[0].clientX;
 };
+
+const isOvershotLeft = (max: number, dragX: number, e: DragEvent | TouchEvent) => {
+  if (e instanceof TouchEvent) {
+    return dragX < -max / 2;
+  }
+  return dragX < -max;
+};
+
+const isOvershotRight = (max: number, dragX: number, e: DragEvent | TouchEvent) => {
+  if (e instanceof TouchEvent) {
+    return dragX > max / 2;
+  }
+  return max < dragX;
+};
 export const useGuessingCard = ({ handleLikeCard, handleDislikeCard, frontSide }: any) => {
   const refCard = useRef<HTMLDivElement>(null);
   const maxDragToChangePage = 150;
@@ -41,22 +55,25 @@ export const useGuessingCard = ({ handleLikeCard, handleDislikeCard, frontSide }
       card.style.transform = `rotate(${dragX / 50}deg) translateX(${dragX}px)`;
 
       card.style.opacity = "1";
-      if (maxDragToChangePage < dragXCurrent || dragXCurrent < -maxDragToChangePage) {
+      if (
+        isOvershotLeft(maxDragToChangePage, dragXCurrent, e) ||
+        isOvershotRight(maxDragToChangePage, dragXCurrent, e)
+      ) {
         card.style.opacity = "0.8";
       }
     }
   };
 
-  const resetPosition = () => {
+  const resetPosition = (e: DragEvent | TouchEvent) => {
     const card = refCard.current;
     if (card) {
       card.style.transform = `translateX(0px)`;
     }
 
-    if (maxDragToChangePage < dragXCurrent) {
+    if (isOvershotLeft(maxDragToChangePage, dragXCurrent, e)) {
       handleLikeCard();
     }
-    if (dragXCurrent < -maxDragToChangePage) {
+    if (isOvershotRight(maxDragToChangePage, dragXCurrent, e)) {
       handleDislikeCard();
     }
   };

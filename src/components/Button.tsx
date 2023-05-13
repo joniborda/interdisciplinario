@@ -20,7 +20,7 @@ export const Button = ({ title, body, className }: ButtonProps) => {
   return (
     <>
       <button
-        className={clsx("rounded-xl bg-[#42CBA5] px-8 py-6 text-2xl text-black", className)}
+        className={clsx("rounded-xl bg-[#42CBA5] text-2xl text-black", className)}
         onClick={handleClick}
       >
         {title}
