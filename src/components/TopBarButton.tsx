@@ -11,7 +11,7 @@ export const TopBarButton = ({ isMenuOpen, setIsMenuOpen }: TopBarButton) => {
   return (
     <button
       className={clsx(
-        "flex flex-col w-10 h-12 border-0 bg-transparent gap-[0.75rem]",
+        "flex flex-col w-[2.8rem] h-12 border-0 bg-transparent gap-[0.75rem]",
         isMenuOpen && "group"
       )}
       onClick={() => setIsMenuOpen(!isMenuOpen)}

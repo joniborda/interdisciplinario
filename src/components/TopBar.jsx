@@ -16,20 +16,34 @@ export const TopBar = ({ children }) => {
           boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.5)',
         }}
       >
-        <TopBarButton isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+        <div className="flex">
+          <TopBarButton isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+          <h2
+            className={clsx(
+              'py-2 hover:bg-slate-800 block w-full font-[fortnite]',
+              'tracking-widest text-2xl justify-self-center text-center pr-4',
+            )}
+          >
+            Menú
+          </h2>
+        </div>
         <div className="flex flex-col gap-1 justify-center items-center">
-          <Link href="/"
-            className="py-2 hover:bg-slate-800 block w-full font-[fortnite] tracking-widest text-xl">
-              ¿Qué disciplinas intervienen?
+          <Link
+            href="/"
+            className="py-2 hover:bg-slate-800 block w-full font-[fortnite] tracking-widest text-xl"
+          >
+            ¿Qué disciplinas intervienen?
           </Link>
-          <Link href="/guess"
-            className="py-2 hover:bg-slate-800 block w-full font-[fortnite] tracking-widest text-xl">
-              ¿Cuál es la disciplina?
+          <Link
+            href="/guess"
+            className="py-2 hover:bg-slate-800 block w-full font-[fortnite] tracking-widest text-xl"
+          >
+            ¿Cuál es la disciplina?
           </Link>
         </div>
       </div>
       <div className="pt-3 px-2">
-      <TopBarButton isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+        <TopBarButton isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       </div>
       <div className="grow">{children}</div>
     </div>
