@@ -38,7 +38,7 @@ export default function List() {
         )}
       >
         {filteredData.map((item) => (
-          <div className="">
+          <div className="" key={item.title}>
             <h2 className="text-center text-lg font-[fortnite] tracking-widest">{item.title}</h2>
             <p className="max-h-[50px] overflow-hidden text-ellipsis">{item.riddle}</p>
           </div>

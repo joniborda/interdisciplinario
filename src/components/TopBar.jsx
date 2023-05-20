@@ -40,6 +40,12 @@ export const TopBar = ({ children }) => {
           >
             ¿Cuál es la disciplina?
           </Link>
+          <Link
+            href="/list"
+            className="py-2 hover:bg-slate-800 block w-full font-[fortnite] tracking-widest text-xl"
+          >
+            Glosario
+          </Link>
         </div>
       </div>
       <div className="pt-3 px-2">
