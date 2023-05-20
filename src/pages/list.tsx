@@ -33,12 +33,12 @@ export default function List() {
       </div>
       <div
         className={clsx(
-          "grid overflow-hidden grid-cols-3",
+          "grid overflow-hidden grid-cols-3 gap-2",
           "items-center justify-between p-6 sm:p-20 pt-1 sm:pt-10"
         )}
       >
         {filteredData.map((item) => (
-          <div className="" key={item.title}>
+          <div className="shadow-2xl bg-slate-800 rounded-lg p-3 h-40" key={item.title}>
             <h2 className="text-center text-lg font-[fortnite] tracking-widest">{item.title}</h2>
             <p className="max-h-[50px] overflow-hidden text-ellipsis">{item.riddle}</p>
           </div>
